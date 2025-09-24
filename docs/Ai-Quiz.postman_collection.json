@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "56433afe-57f7-44f7-86b6-0cc7a41d1e4e",
+		"name": "Ai-Quiz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45887214",
+		"_collection_link": "https://crimson-rocket-67080.postman.co/workspace/New-Team-Workspace~86a856f4-1729-48eb-93ee-80428694afeb/collection/11503214-56433afe-57f7-44f7-86b6-0cc7a41d1e4e?action=share&source=collection_link&creator=45887214"
+	},
+	"item": [
+		{
+			"name": "SignupUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"testuser2\", \"password\":\"password123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"testuser\", \"password\":\"password123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hello",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "cookies.txt"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Questions",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "cookies.txt"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"grade\": 5,\n    \"Subject\": \"maths\",\n    \"TotalQuestions\": 2,\n    \"MaxScore\": 10,\n    \"Difficulty\": \"EASY\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/questions/generate-questions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"questions",
+						"generate-questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetQuiz",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/questions/quiz/b138e352-ccdf-4f74-9896-f5ea5800af83",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"questions",
+						"quiz",
+						"b138e352-ccdf-4f74-9896-f5ea5800af83"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SubmitQuiz",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"quizId\": \"afa0143f-a0c0-428e-885d-32c70194feac\",\n    \"responses\": [\n      {\n        \"questionId\": \"5b77359f-0611-4927-8548-e2bd8c4a1ef0\",\n        \"userResponse\": \"D\"\n      },\n      {\n        \"questionId\": \"cb4337e4-e98e-4488-acb3-b5f58eda1e1a\",\n        \"userResponse\": \"A\"\n      }\n    ]\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/quiz/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"quiz",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QuizHistory",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/quiz/history?minScore=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"quiz",
+						"history"
+					],
+					"query": [
+						{
+							"key": "minScore",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionHint",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/questions/5b77359f-0611-4927-8548-e2bd8c4a1ef0/hint",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"questions",
+						"5b77359f-0611-4927-8548-e2bd8c4a1ef0",
+						"hint"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
