@@ -2,10 +2,6 @@
 
 A Node.js Express application with PostgreSQL database that provides authentication endpoints and AI-powered quiz generation.
 
-## Live Demo
-
-The application is hosted at: [https://playpower-app.gentleglacier-3f2b9a90.centralindia.azurecontainerapps.io/](https://playpower-app.gentleglacier-3f2b9a90.centralindia.azurecontainerapps.io/)
-
 ## Features
 
 - User signup and login endpoints
